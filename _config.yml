@@ -1,20 +1,29 @@
-
-title: "TinyCodes"
-email: your-email@example.com
+title: "TinyCodes - MAKING SOFTWARE CREATION CHEAP EASY AND TIMELY"
+email: info@tinycodes.io
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  TinyCodes is a world class software and app design and development company;
+  Leading software and app design, creation and consulting.
+  TinyCodes is expert at Web Site (Static and Dynamic), Web app, Desktop app (Windows, Mac and Linux), Mobile app (iOS and Android), Cloud computing (AWS) Machine learning, AI and other fields.
+  TinyCodes is based in Lalitpur, Nepal.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://tinycodes.io"
+facebook_username: tinycodes.io
+twitter_username: tiny_codes
+linkedin_username:  tiny-codes
 
 # Build settings
 markdown: kramdown
-#theme: minima
 plugins:
   - jekyll-feed
+
+# Default settings
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "pages"
+    values:
+      layout: "default"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
