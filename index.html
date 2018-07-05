@@ -1,0 +1,8 @@
+---
+layout: default
+---
+<main role="main" class="cf">
+  {% for page in site.posts reversed %}
+      {{ page.content }}
+  {% endfor %}
+</main>

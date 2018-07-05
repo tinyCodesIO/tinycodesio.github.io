@@ -1,0 +1,57 @@
+---
+#layout: post
+title:  "Contact Us"
+date:   2018-06-29
+categories: single page
+---
+<!--------------- Contact Area -------------->
+<div id="contact-area" class="section section-padding-extra contact-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <div class="section-heading">
+                    <h2 class="section-title">Leave a message</h2>
+                    <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <form class="contact-form wow animated fadeInUp" data-wow-duration="1.5s" action="https://formspree.io/info@tinycodes.io" method="post">
+                    <div class="row">
+                        <div class="col-sm-6"><input type="text" name="name" placeholder="Name" required></div>
+                        <div class="col-sm-6"><input type="email" name="email" placeholder="Email" required></div>
+                        <div class="col-sm-12"><input type="text" name="subject" placeholder="Subject" required></div>
+                        <div class="col-sm-12"><textarea  name="message" placeholder="Message" rows="4" required></textarea></div>
+                        <div class="col-sm-12 text-center">
+                            <button class="btn btn-white" type="submit">Submit Message</button>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <p class="input-success">We have received your mail, We will get back to you soon!</p>
+                            <p class="input-error">Sorry, Message could not send! Please try again.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="contact-infos">
+                <div class="col-sm-6 text-center">
+                    <div class="contact-item wow animated fadeInUp" data-wow-duration="1.5s">
+                        <span class="contact-icon"><i class="fa fa-map-marker"></i></span>
+                        <p class="contact-detail">Naya Bato, Lalitpur, Nepal</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <div class="contact-item wow animated fadeInUp" data-wow-delay="1s" data-wow-duration="1.5s">
+                        <span class="contact-icon"><i class="fa fa-phone"></i></span>
+                        <p class="contact-detail">977 015555444</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="map-section" class="section">
+    <div class="google-map" id="location" data-lat="27.6787758" data-lng="85.3031199" data-zoom="16" style="height: 330px"></div>
+</div>
