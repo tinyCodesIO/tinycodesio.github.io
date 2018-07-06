@@ -1,7 +1,6 @@
-# tinycodesio.github.io
-Tinycodes homepage
+Tinycodes website.
 
-This repo is the homepage of **`<TinyCodes/>`**.
+This repo is the website of **`<TinyCodes/>`**.
 The URL of the of our site is [https://tinycodes.io](https://tinycodes.io).
 
 Thanks to GitHub for the free hosting.
