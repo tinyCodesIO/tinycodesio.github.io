@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
-  {%- include head.html -%}
-
-  <body data-spy="scroll" data-target="#main-nav-collapse">
-    {%- include navbar.html -%}
-     <!--------------- Main Body Area -------------->
-    <div class="main-wrap">
-      {{ content }}
-    </div>
-    {%- include footer.html -%}
-  </body>
-
-</html>
+---
+layout: base
+---
+<body data-target="#main-nav-collapse" data-spy="scroll">
+  {%- include navbar.html -%}
+  <!--------------- Main Body Area -------------->
+  <div class="main-wrap">
+    {{ content }}
+  </div>
+</body>
+{%- include footer.html -%}

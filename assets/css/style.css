@@ -252,7 +252,7 @@ img{
     display: inline-block;
     font-size: 1.8rem;
     color: #ffffff;
-    /* background-color: #1A48A0; */
+    background-color: #1A48A0;
     border-radius: 4px;
     padding: 10px 52px;
     position: relative;
@@ -547,9 +547,9 @@ Header
     display: inline-block;
 }
 .top-header h1, .flex_text {
-    /* margin-top: 40px; */
+    margin-top: 40px;
     letter-spacing: 0;
-    font-size: 5rem;
+    /* font-size: 5rem; */
 }
 .flex_text li{
     font-size: 3.6rem;
@@ -1659,7 +1659,7 @@ aside, .widget-content{
     margin: 0;
     border-radius: 4px;
 }
-.searchform button[type=submit] {
+.searchform span {
     position: absolute;
     top: 0;
     right: 0;
@@ -1885,4 +1885,8 @@ Blog Page Single
 }
 #error-page div {
     margin: 50px 0;
+}
+
+.article-list {
+    margin-bottom : 50px;
 }

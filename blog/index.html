@@ -1,0 +1,64 @@
+---
+layout : default
+---
+ <!--------------- Header -------------->
+    <header class="page-header blog-page-header section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="page-title">Our recent Article</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!--------------- Main Body Area -------------->
+<div class="main-wrap">
+    <div class="section section-padding-extra blog-area">
+        <div class="container">
+            <div class="row">
+                <div class="blog-listing-wrap">
+                    <div class="col-sm-8 blogbar">
+                        {% for post in paginator.posts limit:2 %}
+                            <article>
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <a class="post-thumbnail-link" href="#">
+                                            <img src="{{ site.url }}/{{ post.blog-img }}" alt="{{ post.title }}">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <h4 class="post-title"><a href="{{ site.baseurl }}{{ post.url }}" title= "{{ post.title }}">{{ post.title }}</a></h4>
+                                        <p class="post-metas">
+                                            <span class="post-meta">by {{post.author }}</span>
+                                            <time datetime="{{post.date}}">{{post.date | date:"%B %-d, %Y" }} </time>
+                                        </p>
+                                        <div class="post-content">
+                                            <p> {{post.excerpt | strip_html }} </p>
+                                        </div>
+                                        <a class="btn read-post" href="{{ site.baseurl }}{{ post.url }}">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+                        {% endfor %}
+                        
+                        <div class="pagination">
+                            {% if paginator.previous_page %}
+                                {% if paginator.previous_page == 1 %}
+                                    <a class="page-link" href="{{site.baseurl}}/blog/" class="previous"><</a>
+                                {% else %}
+                                    <a class="page-link" href="{{ site.baseurl }}/blog/page{{ paginator.previous_page }}" class="previous"><</a>
+                                {% endif %}
+                            {% endif %}
+                            {% if paginator.next_page %}
+                                <a class="page-link" href="{{ site.baseurl }}/blog/page{{ paginator.next_page }}" class="next">></a>
+                            {% endif %} 
+                        </div>
+                    </div>
+                    
+                    {% include /blog/sidebar.html %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

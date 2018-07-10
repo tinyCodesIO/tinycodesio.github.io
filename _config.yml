@@ -1,4 +1,4 @@
-safe: true
+#safe: true
 email: info@tinycodes.io
 description: >- # this means to ignore newlines until "baseurl:"
   TinyCodes is a world class software and app design and development company;
@@ -11,10 +11,17 @@ facebook_username: tinycodes.io
 twitter_username: tiny_codes
 linkedin_username:  tiny-codes
 
+paginate: 2
+paginate_path: '/blog/page:num/'
+permalink: /blog/:title
+
 # Build settings
 markdown: kramdown
+
+# Plugins
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 # Default settings
 defaults:

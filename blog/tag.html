@@ -1,0 +1,45 @@
+---
+layout : default
+---
+ <!--------------- Header -------------->
+    <header class="page-header blog-page-header section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="page-title">Our Article</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!--------------- Main Body Area -------------->
+<div class="main-wrap">
+    <div class="section section-padding-extra blog-area">
+        <div class="container">
+            <div class="row">
+                <div class="blog-listing-wrap">
+                    <div class="col-sm-8 blogbar">
+                        {% capture blog_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+                        {% assign tagList = blog_tags | split:',' | sort %}
+                        {% for tag in tagList %}
+                            <div id="{{ tag | cgi_escape }}" class="article-list">
+                            <h3>{{ tag }}</h3>
+                            <ul class="taglist">
+                            {% for post in site.tags[tag] %}
+                                <li>
+                                    <time itemprop="dateCreated" datetime="{{post.date}}">
+                                        {{ post.date | date: "%b %d, %Y" }}</time> | <a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark" title="{{ post.title }}">
+                                        {{post.title}}</a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    
+                    {% include /blog/sidebar.html %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

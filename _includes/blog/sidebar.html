@@ -1,0 +1,66 @@
+<!-- Script pointing to search-script.js -->
+<script src="{{"/assets/js/blog/search-script.js" | relative_url }}"></script>
+
+<div class="col-lg-3 col-lg-offset-1 col-sm-4 sidebar">                
+    <aside class="widget sidebar-widget search-widget">
+        <div id="search-container" class="searchform" action="#" method="post">
+            <input type="search" id="search-input" name="searh-keyword" placeholder="search..." required="">
+            <span type="submit" name="searchsubmit"><i class="fa fa-search"></i></span>
+            <ul id="results-container"></ul>
+        </div>
+    </aside>
+
+    <aside class="widget sidebar-widget category-widget">
+        <h4 class="widget-title">Categories</h4>
+        <div class="widget-content">
+            <ul class="category-list angle-list">
+                <li class="cat"><a href="#">Web UI <span class="post-on-cat">(50)</span></a></li>
+                <li class="cat"><a href="#">Corporate Design <span class="post-on-cat">(13)</span></a></li>
+                <li class="cat"><a href="#">Creative Design <span class="post-on-cat">(35)</span></a></li>
+                <li class="cat"><a href="#">Lorem <span class="post-on-cat">(55)</span></a></li>
+                <li class="cat"><a href="#">Brand Identity <span class="post-on-cat">(25)</span></a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <aside class="widget sidebar-widget post-widget">
+        <h4 class="widget-title">Latest Posts</h4>
+        <div class="widget-content">
+            <ul class="latest-list">
+                {% for post in site.posts limit:4 %}
+                    <li class="latest-post">
+                        <a href="{{ site.baseurl }}{{ post.url }}" class="s-thumb"><img src="{{ site.url }}/{{post.blog-img}}" alt="{{post.title}}"></a>
+                        <div class="s-content">
+                            <a class="s-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                            <p class="s-date" datetime="{{post.date}}">{{post.date | date:"%B %-d, %Y" }}</p>
+                            <!-- <time class="s-date" datetime="{{post.date}}">{{post.date | date:"%B %-d, %Y" }} </time> -->
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </aside>
+
+    <aside class="widget sidebar-widget tag-widget">
+        <h4 class="widget-title">Tag Post</h4>
+        <div class="widget-content">
+            <div class="widget-tag">
+                {% capture blog_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+                {% assign tagList = blog_tags | split:',' | sort %}
+                                 
+                {% for tag in tagList %}
+                    <a href="{{ site.url }}/blog/tag#{{ tag | cgi_escape }}" class="tag">{{ tag }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </aside>
+</div>
+
+<!-- Search Configuration -->
+<script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '/search.json'
+    })
+</script>
